@@ -2,6 +2,8 @@ package E25DuplicateRemover;
 
 public class Main {
     public static void main(String args[]){
+
+        DuplicateRemover remover = new PersonalDuplicateRemover();
         remover.add("first");
         remover.add("second");
         remover.add("first");
