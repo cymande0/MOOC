@@ -14,16 +14,16 @@ public class MaxWeightBox extends Box{
     }
 
     public void add(Thing thing){
-        if(thing.getWeight() > this.maxWeight){
-            throw new IllegalStateException();
+        int weightBox = 0;
+        for (Thing t : things) {
+            weightBox += t.getWeight();
         }
-        things.add(thing);
+        if (weightBox + thing.getWeight() <= this.maxWeight) {
+            things.add(thing);
+        }
     }
 
     public boolean isInTheBox(Thing thing){
-        if(things.contains(thing)){
-            return true;
-        }
-        return false;
+        return things.contains(thing);
     }
 }
